@@ -1,0 +1,42 @@
+
+h1 {
+    padding-left: 250px;
+}
+
+#mainDivID {
+    width: 50%;
+    padding-left: 110px;
+}
+
+#textAreaDivID {
+   clear: both;
+}
+
+.calcInputID {
+    width: 500px;
+    height: 40px;
+    resize: none;
+    font-size: 25px;
+    text-align: right;
+}
+
+#calcDivID {
+    clear: both;
+}
+
+.digitClass {
+    width: 166px;
+    height: 60px;
+    background-color: wheat;
+    border: 3px solid white;
+    font-size: 20px;
+}
+
+#calcId {
+    width: 505px;
+    height: 60px;
+    background-color: wheat;
+    border: 3px solid white;
+    font-size: 20px;
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+<body onLoad="disableOperators()">
+    <h1>CALCULATOR</h1>
+
+    <div id="mainDivID">
+        <div id="textAreaDivID">
+            <textarea class="calcInputID" id="calcInput1" onkeydown="return false" placeholder="0"></textarea>
+            <textarea class="calcInputID" id="calcInput2" onkeydown="return false" placeholder="0"></textarea>
+            <textarea class="calcInputID" id="calcOutput" disabled></textarea>
+        </div>
+        <div id="calcDivID">
+            <div class="digitSectionClass">
+                <button id="cell7" class="digitClass" onclick="getNumber(this)" >7</button>
+                <button id="cell8" class="digitClass" onclick="getNumber(this)" >8</button>
+                <button id="cell9" class="digitClass" onclick="getNumber(this)" >9</button>
+            </div>
+            <div class="digitSectionClass">
+                <button id="cell4" class="digitClass" onclick="getNumber(this)" >4</button>
+                <button id="cell5" class="digitClass" onclick="getNumber(this)" >5</button>
+                <button id="cell6" class="digitClass" onclick="getNumber(this)" >6</button>
+            </div>
+            <div class="digitSectionClass">
+                <button id="cell1" class="digitClass" onclick="getNumber(this)" >1</button>
+                <button id="cell2" class="digitClass" onclick="getNumber(this)" >2</button>
+                <button id="cell3" class="digitClass" onclick="getNumber(this)" >3</button>
+            </div>
+            <div class="digitSectionClass">
+                <button id="cell0" class="digitClass" onclick="getNumber(this)" >0</button>
+                <button id="cellClear" class="digitClass" onclick="clearTextArea(this)" >Clear</button>
+                <button id="cellAdd" class="digitClass" onclick="getOperator(this)" >+</button>
+            </div>
+            <div class="digitSectionClass">
+                <button id="cellMinus" class="digitClass" onclick="getOperator(this)" >-</button>
+                <button id="cellMultiply" class="digitClass" onclick="getOperator(this)" >*</button>
+                <button id="cellDivide" class="digitClass" onclick="getOperator(this)" >/</button>
+            </div>
+            <div class="calcClass">
+                <button id="calcId" onclick="calc()">=</button>
+            </div>
+        </div> 
+    </div>
+</body> 
+</html>
