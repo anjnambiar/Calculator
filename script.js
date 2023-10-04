@@ -4,11 +4,8 @@ var operator = null;
 var isOperatorClicked = false;
 
 //disable all the operators on load
-function disableOperators() {
-    document.getElementById("cellAdd").disabled = true;
-    document.getElementById("cellMinus").disabled = true;
-    document.getElementById("cellMultiply").disabled = true;
-    document.getElementById("cellDivide").disabled = true;
+function disableAllOperators() {
+    disableOperators();
     document.getElementById("calcId").disabled = true;
 }
 
@@ -54,28 +51,17 @@ function getOperator(event) {
     operator = event.innerText;
     if(operator == "+") {
         highlightOperator("+");
-        document.getElementById("cellMinus").disabled = true;
-        document.getElementById("cellMultiply").disabled = true;
-        document.getElementById("cellDivide").disabled = true;
     }
     else if(operator == "-") {
         highlightOperator("-");
-        document.getElementById("cellAdd").disabled = true;
-        document.getElementById("cellMultiply").disabled = true;
-        document.getElementById("cellDivide").disabled = true;
     }
     else if(operator == "*") {
         highlightOperator("*");
-        document.getElementById("cellAdd").disabled = true;
-        document.getElementById("cellMinus").disabled = true;
-        document.getElementById("cellDivide").disabled = true;
     }
     else if(operator == "/") {
         highlightOperator("/");
-        document.getElementById("cellAdd").disabled = true;
-        document.getElementById("cellMinus").disabled = true;
-        document.getElementById("cellMultiply").disabled = true;
     }
+    disableOperators();
 }
 
 
@@ -127,7 +113,7 @@ function clearTextArea(event) {
     clearOperatorHighlight();
     enableButtons();
     isOperatorClicked = false;
-    disableOperators() ;
+    disableAllOperators() ;
 }
 
 
@@ -135,28 +121,28 @@ function clearTextArea(event) {
 function highlightOperator(operator) {
     isOperatorClicked = true;
     if(operator == "+") {
-        document.getElementById("cellAdd").style.borderColor = 'red';
+        document.getElementById("cellAdd").style.borderColor = '#FAAAAA';
         document.getElementById("cellMinus").style.borderColor = '';
         document.getElementById("cellMultiply").style.borderColor = '';
         document.getElementById("cellDivide").style.borderColor = '';
     }
     else if(operator == "-") {
         document.getElementById("cellAdd").style.borderColor = '';
-        document.getElementById("cellMinus").style.borderColor = 'red';
+        document.getElementById("cellMinus").style.borderColor = '#FAAAAA';
         document.getElementById("cellMultiply").style.borderColor = '';
         document.getElementById("cellDivide").style.borderColor = '';
     }
     else if(operator == "*") {
         document.getElementById("cellAdd").style.borderColor = '';
         document.getElementById("cellMinus").style.borderColor = '';
-        document.getElementById("cellMultiply").style.borderColor = 'red';
+        document.getElementById("cellMultiply").style.borderColor = '#FAAAAA';
         document.getElementById("cellDivide").style.borderColor = '';
     }
     else if(operator == "/") {
         document.getElementById("cellAdd").style.borderColor = '';
         document.getElementById("cellMinus").style.borderColor = '';
         document.getElementById("cellMultiply").style.borderColor = '';
-        document.getElementById("cellDivide").style.borderColor = 'red';
+        document.getElementById("cellDivide").style.borderColor = '#FAAAAA';
     }
 }
 
@@ -168,12 +154,17 @@ function clearOperatorHighlight() {
     document.getElementById("cellDivide").style.borderColor = '';
 }
 
-//function to disable all buttons except 'clear' once '=' is pressed
-function disableButtons() {
+//function disable operators
+function disableOperators() {
     document.getElementById("cellAdd").disabled = true;
     document.getElementById("cellMinus").disabled = true;
     document.getElementById("cellMultiply").disabled = true;
     document.getElementById("cellDivide").disabled = true;
+}
+
+//function to disable all buttons except 'clear' once '=' is pressed
+function disableButtons() {
+    disableOperators();
     document.getElementById("cell0").disabled = true;
     document.getElementById("cell1").disabled = true;
     document.getElementById("cell2").disabled = true;
